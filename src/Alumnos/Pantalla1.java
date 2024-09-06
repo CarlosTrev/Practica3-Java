@@ -48,6 +48,7 @@ public class Pantalla1 {
 
         for (Genero genero : Genero.values()){
             comboBoxModel.addElement(genero);
+            //prueba1
         }
     }
 }
