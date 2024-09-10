@@ -6,11 +6,13 @@ public class Alumno {
     private String amaterno;
     private String telefono;
     private String correo;
-    private String discapacidad;
+    private boolean discapacidad;
     private String curp;
     private int edad;
     private String estadonacimiento;
-    public Alumno(String nombre, String apaterno, String amaterno, String curp, String discapacidad, String correo, String telefono) {
+    private String sexo;
+
+    public Alumno(String nombre, String apaterno, String amaterno, String curp, boolean discapacidad, String correo, String telefono, String sexo) {
         this.nombre = nombre;
         this.apaterno = apaterno;
         this.amaterno = amaterno;
@@ -18,6 +20,40 @@ public class Alumno {
         this.discapacidad = discapacidad;
         this.correo = correo;
         this.telefono = telefono;
+        this.sexo = sexo;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApaterno() {
+        return apaterno;
+    }
+    public String getAmaterno() {
+        return amaterno;
+    }
+    public String getCurp() {
+        return curp;
+    }
+    public boolean getDiscapacidad() {
+        return discapacidad;
+    }
+    public String getCorreo() {
+        return correo;
+    }
+    public String getTelefono() {
+        return telefono;
+    }
+    public String getSexo() {
+        return sexo;
+    }
+    public String discapacidad() {
+        if (discapacidad) {
+            return "Si";
+        }
+        else {
+            return "No";
+        }
+    }
 }
