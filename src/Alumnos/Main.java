@@ -20,6 +20,7 @@ public class Main {
                         System.out.println("Correo: " + persona.getCorreo());
                         System.out.println("Telefono: " + persona.getTelefono());
                         System.out.println("Discapacidad: " + persona.discapacidad());
+                        System.out.println("Edad: " + persona.getEdad());
                     }
                 });
             }

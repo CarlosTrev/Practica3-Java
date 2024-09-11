@@ -1,4 +1,7 @@
 package Alumnos;
+import java.time.LocalDate;
+import java.time.Period;
+
 
 public class Alumno {
     private String nombre;
@@ -55,5 +58,24 @@ public class Alumno {
         else {
             return "No";
         }
+
+    }
+    public int getEdad() {
+        return calcularEdadDesdeCurp(this.curp);
+    }
+
+    private int calcularEdadDesdeCurp(String curp) {
+        int anio = Integer.parseInt(curp.substring(4, 6));
+        int mes = Integer.parseInt(curp.substring(6, 8));
+        int dia = Integer.parseInt(curp.substring(8, 10));
+        if (anio <= LocalDate.now().getYear() % 100) {
+            anio += 2000;
+        } else {
+            anio += 1900;
+        }
+
+        LocalDate fechaNacimiento = LocalDate.of(anio, mes, dia);
+
+        return Period.between(fechaNacimiento, LocalDate.now()).getYears();
     }
 }
