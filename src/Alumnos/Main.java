@@ -21,12 +21,12 @@ public class Main {
                         System.out.println(persona.getDatos());
                         String contenido= persona.getDatos();
                         Path path = Paths.get("alumnos.txt");
-                        JOptionPane.showMessageDialog(null, "Lista de alumnos actualizada con exito");
 
                         try (PrintWriter pw = new PrintWriter(new FileWriter(path.toFile(), true))) {
                             pw.println(contenido);
+                            JOptionPane.showMessageDialog(null, "Lista de alumnos actualizada con exito");
                         } catch (IOException e) {
-                            System.out.println("Error al escribir en el archivo: " + e.getMessage());
+                            JOptionPane.showMessageDialog(null, "Error al guardar el alumno" + e.getMessage());
                         }
                     }
                 });
