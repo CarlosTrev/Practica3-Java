@@ -12,7 +12,6 @@ public class Alumno {
     private boolean discapacidad;
     private String curp;
     private int edad;
-    private String estadonacimiento;
     private String sexo;
 
     public Alumno(String nombre, String apaterno, String amaterno, String curp, boolean discapacidad, String correo, String telefono, String sexo) {
@@ -78,4 +77,14 @@ public class Alumno {
 
         return Period.between(fechaNacimiento, LocalDate.now()).getYears();
     }
+    public String getDatos() {
+        return "Nombre: " + nombre + " " + apaterno + " " + amaterno + "\n" +
+                "CURP: " + curp + "\n" +
+                "Sexo: " + sexo + "\n" +
+                "Edad: " + getEdad() + " años\n" +
+                "Correo: " + correo + "\n" +
+                "Teléfono: " + telefono + "\n" +
+                "Discapacidad: " + discapacidad() + "\n";
+    }
+
 }

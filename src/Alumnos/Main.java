@@ -1,6 +1,12 @@
 package Alumnos;
 
 import javax.swing.*;
+import java.io.FileWriter;
+import java.io.IOError;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,15 +18,16 @@ public class Main {
                 pantalla.setbotonguardarlistener(new BotonGuardarListener() {
                     @Override
                     public void guardando(Alumno persona) {
-                        System.out.println("Nombre: " + persona.getNombre());
-                        System.out.println("A. paterno: " + persona.getApaterno());
-                        System.out.println("A. materno: " + persona.getAmaterno());
-                        System.out.println("Curp: "+ persona.getCurp());
-                        System.out.println("Sexo: " + persona.getSexo());
-                        System.out.println("Correo: " + persona.getCorreo());
-                        System.out.println("Telefono: " + persona.getTelefono());
-                        System.out.println("Discapacidad: " + persona.discapacidad());
-                        System.out.println("Edad: " + persona.getEdad());
+                        System.out.println(persona.getDatos());
+                        String contenido= persona.getDatos();
+                        Path path = Paths.get("alumnos.txt");
+                        JOptionPane.showMessageDialog(null, "Lista de alumnos actualizada con exito");
+
+                        try (PrintWriter pw = new PrintWriter(new FileWriter(path.toFile(), true))) {
+                            pw.println(contenido);
+                        } catch (IOException e) {
+                            System.out.println("Error al escribir en el archivo: " + e.getMessage());
+                        }
                     }
                 });
             }
