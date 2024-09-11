@@ -1,0 +1,1 @@
+Este programa se utiliza para ingresar ciertos datos, como lo son el nombre, el correo, la curp, etc.<br> Al ingresar los datos y dar aceptar se crea dentro de la carpeta del proyecto un archivo txt donde se almacenan los datos ingresados
